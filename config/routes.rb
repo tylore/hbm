@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
-  get 'adventures/index'
-
-  get 'adventures/create'
-
-  get 'adventures/show'
-
-  get 'adventures/edit'
-
-  get 'adventures/destroy'
+  resources :adventures, only: [:index, :show, :new, :create, :destroy]
+  resources :explorers, only: [:index, :new, :create]
+  resource :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
