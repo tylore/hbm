@@ -1,0 +1,2 @@
+class ExplorersController < ApplicationController
+end
