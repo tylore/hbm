@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :adventures, only: [:index, :show, :new, :create, :destroy]
+  resources :adventures, only: [:index, :show, :new, :create, :edit, :destroy]
   resources :explorers, only: [:index, :new, :create]
   resource :sessions, only: [:new, :create, :destroy]
 
