@@ -11,7 +11,7 @@ class ExplorersController < ApplicationController
       explorer = Explorer.new(params.require(:explorer).permit(:email, :password, :password_confirmation, :avatar))
       if explorer.save
         session["explorer_id"] = explorer.id.to_s
-        redirect_to adventures_path
+        redirect_to new_adventure_path
       else
         redirect_to new_explorer_path
       end
