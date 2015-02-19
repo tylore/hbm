@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= link_to 'ET Goes Home', adventures_path, method: :get %>
+<% if current_explorer != nil %>
+    Who you <%= current_explorer.exp_name %>
+    <%= button_to 'Log Out', sessions_path, method: :delete %>
+<% else %>
+    <%= button_to 'Join Us', new_explorer_path, method: :get %>
+    <%= link_to 'Log In', new_sessions_path %>
+    <% end %>
 <%= yield %>
+
 
 </body>
 </html>
