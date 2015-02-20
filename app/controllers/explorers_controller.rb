@@ -8,7 +8,7 @@ class ExplorersController < ApplicationController
     end
 
     def create
-      explorer = Explorer.new(params.require(:explorer).permit(:email, :exp_name, :password, :password_confirmation, :avatar))
+      explorer = Explorer.new(params.require(:explorer).permit(:email, :exp_name, :password, :password_confirmation,))
       if explorer.save
         session["explorer_id"] = explorer.id.to_s
         redirect_to new_adventure_path

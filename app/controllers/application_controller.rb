@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_explorer
   def current_explorer
     # Memoization next!!! @current_user ||=
-    Explorer.where(id: session["explorer_id"]).first
+    @current_explorer = Explorer.where(id: session["explorer_id"]).first
   end
 end

@@ -13,7 +13,7 @@ class AdventuresController < ApplicationController
 
   def create
     if current_explorer != nil
-      adventure = Adventure.new(params.require(:adventure).permit(:destination, :duration))
+      adventure = Adventure.new(params.require(:adventure).permit(:destination, :duration, :price))
       adventure.explorer_id = current_explorer.id
       if adventure.save
         redirect_to adventures_path(explorer_id: current_explorer.id)
@@ -23,9 +23,6 @@ class AdventuresController < ApplicationController
     end
   end
 
-  def embark
-
-  end
 
   def destroy
     # Note that with edit, destroy, show, and update
@@ -37,6 +34,6 @@ class AdventuresController < ApplicationController
   end
 
   def show
-    @adventure = Adventure.where(id: params[:id]+1)
+    @adventure = Adventure.where(id: params[:id]).first
   end
 end
