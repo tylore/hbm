@@ -23,6 +23,10 @@ class AdventuresController < ApplicationController
     end
   end
 
+  def embark
+
+  end
+
   def destroy
     # Note that with edit, destroy, show, and update
     # the ID comes from the route!!!!! such as:
@@ -33,6 +37,6 @@ class AdventuresController < ApplicationController
   end
 
   def show
-    @adventure = Adventure.where(id: params[:id]).first
+    @adventure = Adventure.where(id: params[:id]+1)
   end
 end
