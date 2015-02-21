@@ -16,4 +16,3 @@ class AdventuresControllerTest < ActionController::TestCase
 
   end
 
-end
