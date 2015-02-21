@@ -1,6 +1,10 @@
 <%= form_for @adventure do |f| %>
     <%= f.text_field :destination %><br />
     <%= f.label "Price" %>
+    <div class="switch">
+    <%= f.check_box :price %>
+    <%= f.label "Price" %>
+      <div/>
     <%= f.check_box :price, class: "switch" %>
     <%= f.label "Price" %>
     <%= f.check_box :price, class: "switch" %>
@@ -8,7 +12,5 @@
     <%= f.check_box :price, class: "switch" %>
     <%= f.label "Price" %>
     <%= f.check_box :price, class: "switch" %>
-    <%= f.label "Price" %>
-    <%= f.check_box :price, class: "switch" %>
-   <%= f.submit %>
+   <!--<%= f.submit %>-->
 <% end %>
