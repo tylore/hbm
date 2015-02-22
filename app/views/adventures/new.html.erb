@@ -1,16 +1,10 @@
-<%= form_for @adventure do |f| %>
+<%= form_for @adventure, :html => {:class => 'custom'} do |f| %>
     <%= f.text_field :destination %><br />
-    <%= f.label "Price" %>
-    <div class="switch">
+    <div class="switch" "custom">
+    <%= f.label "Outside" %>
     <%= f.check_box :price %>
-    <%= f.label "Price" %>
-      <div/>
-    <%= f.check_box :price, class: "switch" %>
-    <%= f.label "Price" %>
-    <%= f.check_box :price, class: "switch" %>
-    <%= f.label "Price" %>
-    <%= f.check_box :price, class: "switch" %>
-    <%= f.label "Price" %>
-    <%= f.check_box :price, class: "switch" %>
-   <!--<%= f.submit %>-->
+
+      </div>
+   <%= f.submit %>
 <% end %>
+
