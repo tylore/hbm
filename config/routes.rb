@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :explorers, only: [:index, :new, :create]
   resource :sessions, only: [:new, :create, :destroy]
 
-  root :to => "explorers#show"
+  root :to => "explorers#new"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

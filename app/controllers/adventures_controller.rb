@@ -25,15 +25,12 @@ class AdventuresController < ApplicationController
 
 
   def destroy
-    # Note that with edit, destroy, show, and update
-    # the ID comes from the route!!!!! such as:
-    #   delete 'thingers/:id' => 'thingers#destroy'
     adventure = Adventure.where(id: params[:id]).first
     adventure.destroy
     redirect_to adventures_path
   end
 
   def show
-    @adventure = Adventure.where(id: params[:id]).first
+    @adventure = Adventure.offset(rand(Adventure.count)).first
   end
 end

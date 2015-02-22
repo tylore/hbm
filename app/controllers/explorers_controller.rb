@@ -16,6 +16,8 @@ class ExplorersController < ApplicationController
         redirect_to new_explorer_path
       end
     end
-  end
+end
+
+
 
 
