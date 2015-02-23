@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
   def create
     e = Explorer.where(email: params[:explorer][:email]).first
     if e != nil && e.authenticate(params[:explorer][:password])
-      session["explorer_id"] = e.id.to_s
+      session['explorer_id'] = e.id.to_s
       redirect_to new_adventure_path(explorer_id: e.id)
     else
-      redirect_to new_sessions_path
+      redirect_to new_sessions_path(:error_message => 'Incorrect password or username')
     end
   end
 

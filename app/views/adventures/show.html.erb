@@ -1,5 +1,10 @@
 <div class="row center-text">
-  <div class="small-6 small-centered columns ">
-<h1><%= @adventure.destination %> </h1>
+  <div class="small-8 medium-centered columns ">
+<br/>
+    <br/>
+    <h1 class="text-center"><%= @adventure.destination %> </h1>
+    <% if @adventure.is_outside == true%>
+    <%= image_tag 'compass.png' %>
+      <% end %>
       </div>
     </div>

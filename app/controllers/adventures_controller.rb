@@ -3,7 +3,7 @@ class AdventuresController < ApplicationController
     if params[:explorer_id] != nil
       @adventures = Adventure.where(explorer_id: params[:explorer_id])
     else
-      @adventures = Adventure.all
+      redirect_to new_sessions_path
     end
   end
 
@@ -28,10 +28,11 @@ class AdventuresController < ApplicationController
 
 
   def destroy
-    adventures = Adventure.where(id: params[:id]).first
-    adventures.delete
+    @adventure = Adventure.find(params[:id])
+    @adventure.delete
     redirect_to adventures_path
   end
+
 
   def show
     @adventure = Adventure.offset(rand(Adventure.count)).first

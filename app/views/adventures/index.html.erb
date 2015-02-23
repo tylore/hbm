@@ -4,7 +4,7 @@
     <h2> There is still so much to do</h2>
 <% @adventures.each do |a| %>
     <%= a.destination %><br />
-    <%= link_to 'Destroy', adventures_path(a) , method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Destroy',@adventure , method: :delete %>
     <hr />
 <% end %>
     </div>
