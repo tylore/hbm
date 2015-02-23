@@ -1,13 +1,23 @@
-<div class="row">
-<%= simple_form_for @adventure, :html => {:class => 'custom'} do |f| %>
-    <div class="small-2 large-4 columns"></div>
-      <%= f.text_field :destination %><br />
-    <div class="switch">
-    <%= f.label "Outside" %>
-    <%= f.check_box :price %>
+<div class="row center-text">
+<%= form_for @adventure, :html => {:class => 'custom'} do |f| %>
+    <div class="small-6 small-centered columns ">
+    <br/>
+     <%= f.label 'Destination' %>
+      <%= f.text_field :destination %><hr>
+      <%= f.check_box :is_outside %>
+      <%= f.label 'Outdoors' %><br />
+      <%= f.check_box :is_aquatic %>
+      <%= f.label 'Aquatic' %><br />
+      <%= f.check_box :is_sturdy_shoes %>
+      <%= f.label 'Wear Sturdy Shoes' %><br />
+      <%= f.check_box :is_inside %>
+      <%= f.label 'Inside' %><br />
+      <%= f.check_box :is_artful %>
+      <%= f.label 'Culturally Stimulating' %><br />
+      <%= f.check_box :is_full_day %>
+      <%= f.label 'Is this a full day excursion?' %><br />
 
-      </div>
-      <%= f.submit %>
+      <%= f.submit 'Create Adventure', :class => 'button success' %>
 <% end %>
 
 </div>

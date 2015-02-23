@@ -1,6 +1,13 @@
-<h1>Log in</h1>
-<%= form_for @explorer, url:{controller: "sessions", action: "create"} do |f| %>
+<div class="row">
+  <div class="small-6 small-centered columns ">
+  <br/>
+    <br/>
+    <%= form_for @explorer, url:{controller: "sessions", action: "create"} do |f| %>
+    <%= f.label 'Email:' %>
     <%= f.text_field :email %><br />
+    <%= f.label 'Password:' %>
     <%= f.password_field :password %><br />
-    <%= f.submit %>
+    <%= f.submit 'Log In', :class => 'button round' %>
 <% end %>
+</div>
+    </div>

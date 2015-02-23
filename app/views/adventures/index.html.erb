@@ -1,7 +1,11 @@
-<h1>Adventures#index</h1>
-<p>Find me in app/views/adventures/index.html.erb</p>
 
-<% @adventures.each do |p| %>
-    <%= p.destination %><br />
+<div class="row center-text">
+  <div class="small-6 small-centered columns ">
+    <h1> There is still so much to do</h1>
+<% @adventures.each do |a| %>
+    <%= a.destination %><br />
+    <%= link_to 'Destroy', adventures_path(a) , method: :delete, data: { confirm: 'Are you sure?' } %>
     <hr />
 <% end %>
+    </div>
+    </div>

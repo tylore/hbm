@@ -23,14 +23,19 @@ class AdventuresController < ApplicationController
     end
   end
 
+  def edit
+  end
+
 
   def destroy
-    adventure = Adventure.where(id: params[:id]).first
-    adventure.destroy
+    adventures = Adventure.where(id: params[:id]).first
+    adventures.delete
     redirect_to adventures_path
   end
 
   def show
     @adventure = Adventure.offset(rand(Adventure.count)).first
+
+
   end
 end
