@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     e = Explorer.where(email: params[:explorer][:email]).first
     if e != nil && e.authenticate(params[:explorer][:password])
       session["explorer_id"] = e.id.to_s
-      redirect_to new_adventures_path(explorer_id: e.id)
+      redirect_to new_adventure_path(explorer_id: e.id)
     else
       redirect_to new_sessions_path
     end
