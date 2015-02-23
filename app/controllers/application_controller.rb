@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_explorer
   def current_explorer
-    @current_explorer = Explorer.where(id: session["explorer_id"]).first
+    @current_explorer = Explorer.where(id: session['explorer_id']).first
   end
 end

@@ -1,10 +1,10 @@
 class AdventuresController < ApplicationController
   def index
-    if params[:explorer_id] != nil
+     if params[:explorer_id] != nil
       @adventures = Adventure.where(explorer_id: params[:explorer_id])
-    else
-      redirect_to new_sessions_path
-    end
+     else
+       @adventures = Adventure.all
+     end
   end
 
   def new
